@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/js/script.js"></script>
 </head>
 <body>
   <div id="app">
-    <h1>{{ message }}</h1>
-
-    <input type="text" v-model="message">
-
-    <pre>{{$data | json }}</pre>
+    <div class="box"></div>
   </div>
 
   <script>
@@ -22,7 +19,14 @@
   }
   new Vue({
     el: "#app",
-    data: data
+    data: {
+      message: ''
+    },
+    methods: {
+      onClick: function() {
+        console.log(this.message);
+      }
+    }
   })
 </script>
 </body>
